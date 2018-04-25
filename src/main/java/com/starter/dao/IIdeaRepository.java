@@ -18,7 +18,6 @@ public interface IIdeaRepository extends JpaRepository<Idea, Long> {
     List<Idea> findByAuthor(@Param("author") User author);
 
     List<Idea> findByAuthorId(@Param("author_id") long id);
-    Idea save(Idea idea);
     Idea findById(@Param("id") long id);
 
 

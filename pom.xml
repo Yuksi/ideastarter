@@ -16,6 +16,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+
+    <hibernate.version>5.2.16.Final</hibernate.version>
+    <liquibase.version>3.6.1</liquibase.version>
+    <spring.data.rest.webmvc.version>2.6.6.RELEASE</spring.data.rest.webmvc.version>
+    <mysql.coonector.version>6.0.3</mysql.coonector.version>
+    <spring.version>4.3.11.RELEASE</spring.version>
+    <jstl.version>1.2</jstl.version>
   </properties>
 
   <parent>
@@ -47,7 +54,7 @@
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
-      <version>1.2</version>
+      <version>${jstl.version}</version>
     </dependency>
 
     <dependency>
@@ -55,7 +62,6 @@
       <artifactId>spring-boot-starter-tomcat</artifactId>
       <scope>provided</scope>
     </dependency>
-
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -66,23 +72,20 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>4.3.11.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
-
 
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>6.0.3</version>
+      <version>${mysql.coonector.version}</version>
     </dependency>
-
-
 
     <dependency>
     <groupId>org.springframework.data</groupId>
     <artifactId>spring-data-rest-webmvc</artifactId>
-    <version>2.6.6.RELEASE</version>
+    <version>${spring.data.rest.webmvc.version}</version>
   </dependency>
   <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -97,18 +100,22 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>5.2.16.Final</version>
+      <version>${hibernate.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
-      <version>5.2.16.Final</version>
+      <version>${hibernate.version}</version>
     </dependency>
 
-
-
+    <!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-core -->
+    <dependency>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-core</artifactId>
+      <version>${liquibase.version}</version>
+    </dependency>
 
   </dependencies>
 

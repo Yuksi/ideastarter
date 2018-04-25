@@ -46,6 +46,6 @@ public class IdeaService implements IIdeaService {
         User user = userRepository.findById(author_id);
         idea.setAuthor(user);
         idea.setStatus(0);
-        ideaRepository.save(idea);
+        ideaRepository.saveAndFlush(idea);
     }
 }
