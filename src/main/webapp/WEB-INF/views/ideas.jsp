@@ -20,7 +20,7 @@
     <c:forEach var="idea" items="${ideas}">
         <tr>
             <td>${idea.id}</td>
-            <td><a href="/users/${idea.id}">${idea.name}</a></td>
+            <td><a href="/ideas/${idea.id}">${idea.name}</a></td>
             <td><a href="/users/${idea.author.id}">${idea.author.login}</a></td>
             <td>${idea.about}</td>
             <td>${idea.status}</td>
