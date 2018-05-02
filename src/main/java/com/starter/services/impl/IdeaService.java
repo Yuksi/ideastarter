@@ -4,9 +4,11 @@ import com.starter.dao.IIdeaRepository;
 import com.starter.dao.IUserRepository;
 import com.starter.entities.Idea;
 import com.starter.entities.User;
+import com.starter.entities.enums.Statuses;
 import com.starter.services.IIdeaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,6 +17,7 @@ import java.util.List;
  */
 
 @Service
+@Transactional
 public class IdeaService implements IIdeaService {
     @Autowired
     IIdeaRepository ideaRepository;
@@ -42,10 +45,17 @@ public class IdeaService implements IIdeaService {
     }
 
     @Override
+    public List<Idea> getWithStatus(Statuses status) {
+        return ideaRepository.findByStatus(status.getStatusNumber());
+    }
+
+    @Override
+    @Transactional
     public void addByAuthorId(Idea idea, long author_id) {
         User user = userRepository.findById(author_id);
         idea.setAuthor(user);
         idea.setStatus(0);
-        ideaRepository.saveAndFlush(idea);
+        ideaRepository.save(idea);
+        ideaRepository.flush();
     }
 }

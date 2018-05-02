@@ -3,6 +3,7 @@ package com.starter.services;
 import com.starter.dao.IIdeaRepository;
 import com.starter.entities.Idea;
 import com.starter.entities.User;
+import com.starter.entities.enums.Statuses;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
  */
 public interface IIdeaService {
     public List<Idea> getAll();
+    public List<Idea> getWithStatus(Statuses status);
 
     public List<Idea> getByUser(User user);
     public List<Idea> getByUserId(long id);

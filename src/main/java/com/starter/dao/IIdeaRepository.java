@@ -20,5 +20,6 @@ public interface IIdeaRepository extends JpaRepository<Idea, Long> {
     List<Idea> findByAuthorId(@Param("author_id") long id);
     Idea findById(@Param("id") long id);
 
+    List<Idea> findByStatus(@Param("status") int status);
 
 }

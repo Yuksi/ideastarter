@@ -1,6 +1,7 @@
 package com.starter.ui.controllers;
 
 import com.starter.entities.Idea;
+import com.starter.entities.enums.Statuses;
 import com.starter.services.IIdeaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,13 @@ public class IdeaController {
     @RequestMapping(value = "/ideas", method = RequestMethod.GET)
     public String ideas(Model model) {
         List<Idea> ideas = ideaService.getAll();
+        model.addAttribute("ideas", ideas);
+        return "ideas";
+    }
+
+    @RequestMapping(value = "/{status}/ideas", method = RequestMethod.GET)
+    public String getIdeasByStatus(@PathVariable("status") String status, Model model) {
+        List<Idea> ideas = ideaService.getWithStatus(Statuses.valueOf(status.toUpperCase()));
         model.addAttribute("ideas", ideas);
         return "ideas";
     }
@@ -52,6 +60,7 @@ public class IdeaController {
     }
     @RequestMapping(value = "/users/{id}/ideas", method = RequestMethod.POST)
     public String addIdea(@ModelAttribute("idea") Idea idea, @PathVariable("id") int id) {
+        idea.setId(0);
         ideaService.addByAuthorId(idea,id);
         return "redirect:ideas";
     }
