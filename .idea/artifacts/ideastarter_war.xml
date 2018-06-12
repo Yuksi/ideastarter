@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ideastarter:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ideastarter-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ideastarter:war exploded" />
+    </root>
+  </artifact>
+</component>
