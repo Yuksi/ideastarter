@@ -73,7 +73,7 @@ public class UserController {
 
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-        return "redirect:/user";
+        return "redirect:/welcome";
     }
 
 
