@@ -11,4 +11,10 @@ public interface IUserService {
     List<User> getAll();
 
     User getById(long id);
+
+    void save(User user);
+
+    User findByUsername(String username);
+
+
 }

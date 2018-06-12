@@ -15,26 +15,37 @@ public class User {
     private long id;
 
     @Column(unique = true, nullable = false)
-    private String login;
+    private String username;
 
     @Column(nullable = false)
-    private String psw;
+    private String password;
+    @Transient
+    private String passwordConfirm;
 
     private String name;
 
     @Column(name = "e_mail")
     private String email;
 
-    @Column(nullable = false)
+    @Column
     private String about;
 
-    @Column(nullable = false)
+    @Column
     private int role;
 
-    @OneToMany(cascade=CascadeType.ALL, mappedBy="author")
+
+    public String getPasswordConfirm() {
+    return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+    this.passwordConfirm = passwordConfirm;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
     private List<Idea> ideas;
 
-    @OneToMany(cascade=CascadeType.ALL, mappedBy="clapping")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "clapping")
     private List<Clap> claps;
 
     public long getId() {
@@ -45,20 +56,20 @@ public class User {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPsw() {
-        return psw;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPsw(String psw) {
-        this.psw = psw;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -109,19 +120,4 @@ public class User {
         this.claps = claps;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        return login != null ? login.equals(user.login) : user.login == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return login != null ? login.hashCode() : 0;
-    }
 }

@@ -8,6 +8,8 @@
     <a href="users">Users</a>
     <a href="ideas">Ideas</a>
     <a href="draft/ideas">Draft Ideas</a>
-    <a href="published/ideas">Published Ideas</a>
+    <a href="publishedIdeas">Published Ideas</a>
+    <a href="registration">Registration</a>
+    <a href="login">Login</a>
 </body>
 </html>

@@ -1,5 +1,3 @@
-<%@ page import="com.starter.entities.enums.Statuses" %>
-<%@ page import="com.starter.entities.Idea" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,5 +26,6 @@
     </tr>
 </table>
 <a href="/">home</a>
+
 </body>
 </html>

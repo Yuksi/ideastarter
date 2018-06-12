@@ -68,6 +68,11 @@
       <artifactId>spring-boot-starter-jdbc</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -116,6 +121,8 @@
       <artifactId>liquibase-core</artifactId>
       <version>${liquibase.version}</version>
     </dependency>
+
+
 
   </dependencies>
 
