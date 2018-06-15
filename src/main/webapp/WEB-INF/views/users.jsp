@@ -11,7 +11,7 @@
 <table style="border-style: solid">
     <tr>
         <td>ID</td>
-        <td>Login</td>
+        <td>Username</td>
         <td>Password</td>
         <td>Name</td>
         <td>Email</td>
@@ -21,8 +21,8 @@
     <c:forEach var="user" items="${users}">
         <tr>
             <td>${user.id}</td>
-            <td><a href="/users/${user.id}">${user.login}</a></td>
-            <td>${user.psw}</td>
+            <td><a href="/users/${user.id}">${user.username}</a></td>
+            <td>${user.password}</td>
             <td>${user.name}</td>
             <td>${user.email}</td>
             <td>${user.about}</td>

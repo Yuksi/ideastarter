@@ -1,5 +1,3 @@
-<%@ page import="com.starter.entities.enums.Statuses" %>
-<%@ page import="com.starter.entities.Idea" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +14,7 @@
     </tr>
     <tr>
         <td><i>Author: </i></td>
-        <td><a href="/users/${idea.author.id}">${idea.author.login}</a></td>
+        <td><a href="/users/${idea.author.id}">${idea.author.username}</a></td>
     </tr>
     <tr>
         <td><i>About: </i></td>
@@ -28,5 +26,6 @@
     </tr>
 </table>
 <a href="/">home</a>
+
 </body>
 </html>

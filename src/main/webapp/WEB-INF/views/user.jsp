@@ -10,11 +10,11 @@
 <table>
     <tr>
         <td><i>Login: </i></td>
-        <td>${user.login}</td>
+        <td>${user.username}</td>
     </tr>
     <tr>
         <td><i>Password: </i></td>
-        <td>${user.psw}</td>
+        <td>${user.password}</td>
     </tr>
     <tr>
         <td><i>Name: </i></td>
@@ -34,6 +34,10 @@
     </tr>
 </table>
 <a href="/users/${user.id}/add-idea">New idea</a>
+
 <a href="/">home</a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

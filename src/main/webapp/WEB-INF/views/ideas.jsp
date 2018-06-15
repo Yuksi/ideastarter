@@ -1,4 +1,3 @@
-<%@ page import="com.starter.entities.enums.Statuses" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -21,7 +20,7 @@
         <tr>
             <td>${idea.id}</td>
             <td><a href="/ideas/${idea.id}">${idea.name}</a></td>
-            <td><a href="/users/${idea.author.id}">${idea.author.login}</a></td>
+            <td><a href="/users/${idea.author.id}">${idea.author.username}</a></td>
             <td>${idea.about}</td>
             <td>${idea.status}</td>
         </tr>
