@@ -71,8 +71,8 @@
         <th>Role</th>
         </tr>
     </thead>
-    <tbody>
-    <c:forEach var="user" items="${users}">
+        <tbody>
+            <c:forEach var="user" items="${users}">
             <tr>
                 <td>${user.id}</td>
                 <td><a href="/users/${user.id}">${user.username}</a></td>
@@ -81,8 +81,8 @@
                 <td>${user.about}</td>
                 <td>${user.role}</td>
             </tr>
-        </c:forEach>
-    </tbody>
+            </c:forEach>
+        </tbody>
     </table>
     <h6>Users count is : ${users.size()}</h6>
     </div>
