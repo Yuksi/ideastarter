@@ -12,9 +12,11 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+
     <title>Idea! starter</title>
 
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -23,24 +25,55 @@
     <![endif]-->
 </head>
 <body>
-    <h1>Idea! starter</h1>
-    <a href="users">Users</a>
-    <a href="ideas">Ideas</a>
-    <a href="draft/ideas">Draft Ideas</a>
-    <a href="published/ideas">Published Ideas</a>
-    <a href="registration">Registration</a>
-    <a href="login">Login</a>
+    <header>
+    <div class="container-fluid">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <a href="/"><img class="img-responsive center-block" src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
+        </div>
+        <div class="col-sm-4">
+            <c:if test="${pageContext.request.userPrincipal.name != null}">
+                    <form id="logoutForm" method="POST" action="${contextPath}/logout">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
 
-    <div class="container">
+                   <p class="text-right">Welcome, ${pageContext.request.userPrincipal.name}! </p>
 
-        <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <form id="logoutForm" method="POST" action="${contextPath}/logout">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        </form>
+             </c:if>
+        </div>
+    </div>
+    </header>
 
-        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
+    <div class="panel panel-default">
+        <div class="btn-group-justified">
+                	<a class="btn btn-link" href="users">USERS</a>
+                    <a class="btn btn-link" href="ideas">IDEAS</a>
+                    <a class="btn btn-link" href="draft/ideas">DRAFT IDEAS</a>
+                    <a class="btn btn-link" href="published/ideas">PUBLISHED IDEAS</a>
+                    <a class="btn btn-link" href="registration">REGISTRATION</a>
+                    <a class="btn btn-link" href="login">LOGIN</a>
+         </div>
+    </div>
 
-        </c:if>
+    <div class="container-fluid">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6"></div>
+            <div class="col-sm-3">
+
+                <c:if test="${pageContext.request.userPrincipal.name != null}">
+                    <form id="logoutForm" method="POST" action="${contextPath}/logout">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Welcome ${pageContext.request.userPrincipal.name}</div>
+                        <div class="panel-body">
+                            <button type="button" class="btn btn-default" onclick="document.forms['logoutForm'].submit()">Logout</button>
+                         </div>
+                    </div>
+                </c:if>
+            </div>
+    </div>
 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
