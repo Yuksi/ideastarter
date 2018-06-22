@@ -14,6 +14,8 @@ public interface IUserService {
 
     void save(User user);
 
+    void update(User user);
+
     User findByUsername(String username);
 
 

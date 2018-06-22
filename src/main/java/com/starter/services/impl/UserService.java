@@ -48,6 +48,12 @@ public class UserService implements IUserService, UserDetailsService {
     }
 
     @Override
+    @Transactional
+    public void update(User user) {
+        userRepository.save(user);
+    }
+
+    @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
     }

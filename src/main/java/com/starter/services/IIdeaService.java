@@ -19,4 +19,6 @@ public interface IIdeaService {
     Idea getById(long id);
 
      void addByAuthorId(Idea idea, long author_id);
+
+    void changeStatus(long id, Statuses st);
 }

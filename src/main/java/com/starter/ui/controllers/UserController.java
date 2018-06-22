@@ -83,13 +83,39 @@ public class UserController {
             model.addAttribute("message", "Logged out successfully.");
         }
 
-        return "welcome";
+        return "login";
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String admin(Model model) {
         return "admin";
     }
+
+
+    @RequestMapping(value = "/users/{id}/update", method = RequestMethod.GET)
+    public String updateUser() {
+        return "change-user";
+    }
+    @ModelAttribute("user")
+    public User newUser() {
+        return new User();
+    }
+    @RequestMapping(value = "/users/{id}", method = RequestMethod.POST)
+    public String updateUser(@ModelAttribute("user") User user, @PathVariable("id") int id) {
+        User existing = userService.getById(id);
+        if (user.getName() != null) {
+            existing.setName(user.getName());
+        }
+        if (user.getEmail() != null) {
+            existing.setEmail(user.getEmail());
+        }
+        if (user.getAbout() != null) {
+            existing.setAbout(user.getAbout());
+        }
+        userService.save(existing);
+        return "redirect:users";
+    }
+
 }
 
 

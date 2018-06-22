@@ -65,4 +65,12 @@ public class IdeaController {
         return "redirect:ideas";
     }
 
+    @RequestMapping(value = "/ideas/{id}/status-message/{st}", method = RequestMethod.GET)
+    public String changeStatus(@PathVariable("id") long id, @PathVariable("st") String st, Model model) {
+        Statuses status = Statuses.valueOf(st.toUpperCase());
+        ideaService.changeStatus(id, status);
+        model.addAttribute(st);
+        return "status-message";
+    }
+
 }

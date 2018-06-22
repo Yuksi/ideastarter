@@ -48,12 +48,12 @@
 
 <div class="panel panel-default">
         <div class="btn-group-justified">
-                	<a class="btn btn-link" href="../users">USERS</a>
-                    <a class="btn btn-link" href="../ideas">IDEAS</a>
-                    <a class="btn btn-link" href="../draft/ideas">DRAFT IDEAS</a>
-                    <a class="btn btn-link" href="../published/ideas">PUBLISHED IDEAS</a>
-                    <a class="btn btn-link" href="../registration">REGISTRATION</a>
-                    <a class="btn btn-link" href="../login">LOGIN</a>
+                	<a class="btn btn-link" href="../../users">USERS</a>
+                    <a class="btn btn-link" href="../../ideas">IDEAS</a>
+                    <a class="btn btn-link" href="../../draft/ideas">DRAFT IDEAS</a>
+                    <a class="btn btn-link" href="../../published/ideas">PUBLISHED IDEAS</a>
+                    <a class="btn btn-link" href="../../registration">REGISTRATION</a>
+                    <a class="btn btn-link" href="../../login">LOGIN</a>
          </div>
     </div>
 

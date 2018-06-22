@@ -58,4 +58,11 @@ public class IdeaService implements IIdeaService {
         ideaRepository.save(idea);
         ideaRepository.flush();
     }
+
+    @Override
+    public void changeStatus(long id, Statuses st) {
+        Idea idea = ideaRepository.findById(id);
+        idea.setStatus(st.getStatusNumber());
+        ideaRepository.save(idea);
+    }
 }
