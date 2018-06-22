@@ -35,6 +35,22 @@
 
 <body>
 
+<header>
+<a href="/"><img class="img-responsive center-block" src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
+</header>
+
+<div class="panel panel-default">
+        <div class="btn-group-justified">
+            	<a class="btn btn-link" href="users">USERS</a>
+                <a class="btn btn-link" href="ideas">IDEAS</a>
+                <a class="btn btn-link" href="draft/ideas">DRAFT IDEAS</a>
+                <a class="btn btn-link" href="published/ideas">PUBLISHED IDEAS</a>
+                <a class="btn btn-link disabled" href="#">REGISTRATION</a>
+                <a class="btn btn-link" href="login">LOGIN</a>
+        </div>
+ </div>
+
+
 <div class="container">
 
     <form method="POST" action="${contextPath}/login" class="form-signin">
@@ -60,6 +76,6 @@
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 
 
-<a href="/">home</a>
+<a class="btn btn-link center-block" role="button" href="/">Home</a>
 </body>
 </html>
